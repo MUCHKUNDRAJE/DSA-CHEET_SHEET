@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: "rejouice headline";
+        color: white;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      #page1 {
+        width: 100%;
+        background-color: #1a1a1a;
+        min-height: 100vh;
+        padding-top: 10px;
+        padding-left: 60px;
+      }
+      #listwarp {
+        display: flex;
+        align-items: start;
+        justify-content: space-evenly;
+      }
+
+      #list {
+        width: 900px;
+        min-height: 600px;
+        background-color: #282828;
+        border-radius: 50px;
+        padding: 20px 30px;
+      }
+      #list h1 {
+        font-size: 4vw;
+        margin-bottom: 40px;
+      }
+      #question1 checkbox{
+        width: 20px;
+        height: 20px;
+      }
+      #meter {
+        width: 32.55vw;
+        height: 19.53vw;
+        background-color: #282828;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+      }
+      #meter1 {
+        width: 32.55vw;
+        height: 26.53vw;
+        background-color: #282828;
+        border-radius: 50px;
+        position: relative;
+       
+      }
+      #meter-bold {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      #question1 {
+        border-bottom: 1px solid white;
+        width: 98%;
+        height: 70px;
+        background-color: #282828;
+        border-radius: 3px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: capitalize;
+      }
+      #question21 {
+        border-bottom: 1px solid white;
+        width: 98%;
+        height: 70px;
+        background-color: #282828;
+        border-radius: 3px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: capitalize;
+      }
+      #question31 {
+        border-bottom: 1px solid white;
+        width: 98%;
+        height: 70px;
+        background-color: #282828;
+        border-radius: 3px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: capitalize;
+      }
+      #function {
+        width: 14%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        /* background-color: red; */
+      }
+      #function input {
+        width: 20px;
+        height: 20px;
+      }
+      #solve {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(189, 162, 3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        border-radius: 30px;
+      }
+      #solve h3 {
+        text-decoration: none;
+      }
+      #porgress {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: conic-gradient(rgb(189, 162, 3) 3.6deg, #d1d1d1 0deg);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all ease 0.5s;
+      }
+      #porgress::before {
+        content: " ";
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #282828;
+      }
+      #meter h1 {
+        position: absolute;
+        top: 50%;
+        left: 35.5%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+      #meter p {
+        position: absolute;
+        top: 60%;
+        left: 35.5%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+
+      #bar {
+        width: 99%;
+        height: 60px;
+        background-color: #282828;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 0.7vw;
+        border-radius: 30px;
+        text-transform: capitalize;
+      }
+      #div1 {
+        height: 70%;
+
+        border-radius: 30px;
+        padding: 12px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-colorKO ease 0.2s;
+        cursor: pointer;
+      }
+      #div1:hover {
+        background-color: rgb(189, 162, 3);
+      }
+      .h2 {
+        margin-top: 10px;
+        height: 40%;
+        width: 60%;
+        font-size: 40px;
+        border-bottom: 5px solid white;
+      }
+      #question1 h2 i {
+        font-size: 10px;
+        margin-right: 10px;
+      }
+      #question21 h2 i {
+        font-size: 10px;
+        margin-right: 10px;
+      }
+      #question31 h2 i {
+        font-size: 10px;
+        margin-right: 10px;
+      }
+      #question1 h2 {
+        display: flex;
+        align-items: center;
+      }
+      #question21 h2 {
+        display: flex;
+        align-items: center;
+      }
+      #question31 h2 {
+        display: flex;
+        align-items: center;
+      }
+      hr {
+        margin-top: 40px;
+        opacity: 0;
+      }
+      #porgress1{
+      width: 90px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 6px 6px;
+      }
+/* Example CSS to style checkboxes */
+
+ .catagory{
+  height: 40px;
+  width: 120px;
+  background-color: #282828d3;
+  border: 1px solid #d1d1d1;
+  font-size: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  border-radius:10px ;
+ }
+#block{
+  display: flex;
+  flex-wrap: wrap;
+  gap:5px;
+  padding: 10px 20px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+#task{
+  display: flex;
+  flex-wrap: wrap;
+  gap:9px;
+  padding: 10px 20px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  
+}
+.block2{
+  height: 40px;
+  width: 120px;
+  background-color: #282828d3;
+  border: 1px solid #d1d1d1;
+  font-size: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  border-radius:10px ;
+ }
+
+
+    </style>
+    <div id="main">
+      <div id="page1">
+        <!-- <div id="circle" style="height: 50px;width:50px;border-radius:50px;background-color:#FF3750;"></div> -->
+        <div id="bar">
+      
+          <div id="div1">
+            <a href="/"><h1>Arrays</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/sreaching"><h1>searching</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/sorting"><h1>sorting</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/string"><h1>string</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/recursion"><h1>recursion</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/bitwise"><h1>bitwise</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/linkedlist"><h1>linked list</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/stack"><h1>stack/queue</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/tree"><h1>trees</h1></a>
+          </div>
+        </div>
+
+        <div id="listwarp">
+          <div id="list">
+            <div id="header" style="display: flex;align-items:center;justify-content:space-between">
+              <h1>Array <i class="ri-corner-right-down-line"></i></h1>
+              <div id="button" style="padding:10px 30px ;background-color:rgb(232, 188, 10);border-radius: 10px;display:flex;align-items:center ;justify-content:center;cursor:pointer"><h4>Edit</h4></div>
+            </div>
+         
+            <h2 class="h2" style="color: #00AB78;">
+              <i class="ri-sparkling-2-line"></i> EASY<i
+                class="ri-arrow-right-fill"
+              ></i>
+            </h2>
+            <% easy.forEach(function(val, index) { %>
+            <div id="question">
+              <div id="question1">
+                <% const str2 = val.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+                %>
+                <h2 style="color: #00AB78;" >
+                  <i class="ri-circle-fill"></i> <%= str2.split(".txt")[0] %>
+                </h2>
+                <div id="function">
+                  <% var str3 = str2.split(" ").join("-").toLowerCase(); %> <%
+                  str3 = str3.split(".txt")[0]; %>
+               
+                  <div id="solve">
+                    <a target="_blank" href="https://leetcode.com/problems/<%= str3 %>">
+                      <h3>Solve</h3>
+                    </a>
+                  </div>
+                  <form action="">    
+                    <input class="custom-checkbox" type="checkbox" id="checkbox-<%=index%>" name="check" value="yes" onclick="updateCheckbox(<%=index%>,this.checked)" />
+              
+                </div>
+              </div>
+            </div>
+            <% }); %>
+            <hr />
+            <h2 class="h2" style="color: #FFB31B;">
+              <i class="ri-sparkling-2-line"></i> Medium<i
+                class="ri-arrow-right-fill"
+              ></i>
+            </h2>
+            <% medium.forEach(function(val, index) { %>
+            <div id="question2-1">
+              <div id="question21">
+                <% const str2 = val.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+                %>
+                <h2 style="color: #FFB31B;">
+                  <i class="ri-circle-fill"></i> <%= str2.split(".txt")[0] %>
+                </h2>
+                <div id="function">
+                  <% var str3 = str2.split(" ").join("-").toLowerCase(); %> <%
+                  str3 = str3.split(".txt")[0]; %>
+                  <div id="solve">
+                    <a href="https://leetcode.com/problems/<%= str3 %>">
+                      <h3>Solve</h3>
+                    </a>
+                  </div>
+                  <form action="">
+                    <input class="custom-checkbox" type="checkbox" id="checkbox2-<%=index%>" name="check" value="yes" onclick="updateCheckbox2(<%=index%>,this.checked)" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+
+            <hr />
+            <h2 class="h2" style="color:#FF3750">
+              <i class="ri-sparkling-2-line"></i> Hard
+              <i class="ri-arrow-right-fill"></i>
+            </h2>
+            <% hard.forEach(function(val, index) { %>
+            <div id="question3-1">
+              <div id="question31" >
+                <% const str2 = val.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+                %>
+                <h2 style="color:#FF3750">
+                  <i class="ri-circle-fill"></i> <%= str2.split(".txt")[0] %>
+                </h2>
+                <div id="function">
+                  <% var str3 = str2.split(" ").join("-").toLowerCase(); %> <%
+                  str3 = str3.split(".txt")[0]; %>
+                  <div id="solve">
+                    <a href="https://leetcode.com/problems/<%= str3 %>">
+                      <h3>Solve</h3>
+                    </a>
+                  </div>
+                  <form action="">
+                    <input class="custom-checkbox" type="checkbox" id="checkbox3-<%=index%>" name="check" value="yes" onclick="updateCheckbox3(<%=index%>,this.checked)" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+
+          <div id="meter-bold">
+      
+            <div id="meter">
+              <% var meter = easy.length + medium.length + hard.length; %>
+              <% var check = checkboxData1.filter(checked => checked).length +
+              checkboxData2.filter(checked => checked).length +
+              checkboxData3.filter(checked => checked).length; %>
+
+              <% let max = (check/ meter) * 100; %>
+              <h1><%=check%> / <%= meter %></h1>
+              <p>Array</p>
+              <div    id="porgress" data="<%= max %>"></div>
+              <div   id="porgress1" style="font-size: 20px; border:1px dashed white; border-radius:20px">
+                <div id="easy"  style="text-align: center;color:#00AB78;">
+                  <h5 style="color:#00AB78;"><%=checkboxData1.length%> / <%=easy.length%></h5>
+                  <h5 style="color:#00AB78;">Easy</h5>
+                </div>
+                <div id="medium" style="text-align: center;color:#FFB31B;">
+                  <h5 style="color: #FFB31B;"><%=checkboxData2.length%> / <%=medium.length%></h5>
+                  <h5 style="color: #FFB31B;">Medium</h5>
+                </div>
+                <div id="hard"  style="text-align: center; color:#FF3750">
+                  <h5  style="color: #FF3750;"><%=checkboxData3.length%> / <%=hard.length%></h5>
+                  <h5 style="color: #FF3750;">Hard</h5>
+                </div>
+              </div>
+            </div>
+            <div id="meter1" style="padding: 30px 40px;position:relative;">
+              <h4 style="font-size:1.3vw ;display:flex;align-items:center">Add Question <i class="ri-arrow-right-double-fill"></i></h4>
+              <form action="/add" method="post" id="form">
+                <label for="">
+                  <input type="text" name="Question" style="height: 40px; width:90%; margin-top:10px; border-radius:5px;color:white;background:#282828;border:1px dashed white;font-size:1.3vw;padding:10px; " placeholder="Add Questions">
+                  <input type="hidden" name="catagories" id="cat">
+                  <input type="hidden" name="difficulty" id="task">
+                </label>
+                <input type="submit" style="position:absolute; bottom:8px; right:40%;padding:7px 30px;color:white;background-color:#FFB31B; border:none; border-radius:6px;font-weigth:500;font-size:15px" value="Submit">
+              </form>
+              <h5 style="text-transform: capitalize;margin:5px">select the type:</h5>
+              <div id="block" style="height: 160px;width:100%;background-color:#1a1a1a;border-radius:10px ;margin:0px -15px " >
+          
+            <div class="catagory"><h1>Array</h1></div>
+             <div class="catagory"><h1>searching</h1></div>
+             <div class="catagory"><h1>sorting</h1></div>
+             <div class="catagory"><h1>string</h1></div>
+             <div class="catagory"><h1>recursion</h1></div>
+             <div class="catagory"><h1>bitwise</h1></div>
+             <div class="catagory"><h1>linkedlist</h1></div>
+             <div class="catagory"><h1>stack&queue</h1></div>
+             <div class="catagory"><h1>trees</h1></div>
+              </div>
+              <div id="task" style="height: 60px;width:100%;background-color:#1a1a1a;border-radius:10px ;margin:10px -10px ">
+                <div class="block2" style="border:1px solid #00AB78;"><h1 style="color: #00AB78;">easy</h1></div>
+                   <div class="block2" style="border:1px solid#FFB31B"><h1 style="color: #FFB31B;" >medium</h1></div>
+                   <div class="block2" style="border:1px solid#FF3750;"><h1 style="color: #FF3750;"  >hard</h1></div>
+              </div>
+          </div>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var checkBoxes = document.querySelectorAll(
+        "#function input[type='checkbox']"
+      );
+      var questions = document.querySelectorAll("#question1 h2");
+      var questions1 = document.querySelectorAll("#question1");
+
+ // Assuming checkBoxes is an array of checkbox elements
+checkBoxes.forEach(function (checkbox, index) {   
+  checkbox.addEventListener("click", function () {
+      location.reload();
+  });
+});
+
+
+      var div1 = document.querySelectorAll("#div1");
+
+      div1.forEach(function (val) {
+        var isColorChanged = false;
+
+        val.addEventListener("click", function () {
+          if (!isColorChanged) {
+            val.style.backgroundColor = "rgb(189, 162, 3)";
+            // Reset color for other div1 elements
+            div1.forEach(function (other) {
+              if (other !== val) {
+                other.style.backgroundColor = "#282828";
+              }
+            });
+          } else {
+            val.style.backgroundColor = "#282828";
+          }
+          isColorChanged = !isColorChanged;
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+        let initial = 0;
+        
+        let progress = document.querySelector("#porgress");
+        let max =progress.getAttribute("data");
+        progress.style.transition = 'background 0.4s ease';
+    
+        let circle = setInterval(() => {
+          initial++;
+    
+          let angle = (initial / 100) * 360;
+          progress.style.background = `conic-gradient(rgb(189, 162, 3) ${angle}deg, #d1d1d1 0deg)`;
+    
+          if (initial >= max) {
+            clearInterval(circle);
+          }
+        }, 10);
+      });
+
+      function updateCheckbox(index, checked) {
+        console.log(index,checked);
+        fetch(`/update?filename=checkedIndices.json&index=${index}&checked=${checked}`, {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+    }
+    function updateCheckbox2(index, checked) {
+      console.log(index,checked);
+      fetch(`/update?filename=checkedIndices2.json&index=${index}&checked=${checked}`, {
+          method: 'GET'
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+      });
+  }
+  function updateCheckbox3(index, checked) {
+    console.log(index,checked);
+    fetch(`/update?filename=checkedIndices3.json&index=${index}&checked=${checked}`, {
+        method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    });
+}
+ //1
+
+document.addEventListener("DOMContentLoaded", function() {
+  Promise.all([
+    fetch('/get-checked?filename=checkedIndices.json'),
+
+  ])
+  .then(responses => Promise.all(responses.map(response => response.json())))
+  .then(dataArray => {
+    const questions = document.querySelectorAll("#question1 h2");
+    const questions1 = document.querySelectorAll("#question1");
+
+    dataArray.forEach((data, dataIndex) => {
+      data.checkedIndices.forEach(index => {
+        if (index < questions.length && index < questions1.length) {  // Ensure index is within range
+          const checkboxId = `checkbox${dataIndex === 0 ? '' : dataIndex + 1}-${index}`;
+          const checkbox = document.getElementById(checkboxId);
+          const h2 = questions[index];
+          const op = questions1[index];
+          
+          if (checkbox) {
+            checkbox.checked = true;
+            updateH2State(op, h2, checkbox.checked); // Update the state of <h2>
+            checkbox.addEventListener('change', function() {
+              updateH2State(op, h2, this.checked);
+            });
+          } else {
+            console.warn(`Checkbox with ID ${checkboxId} not found`);
+          }
+        } else {
+          console.warn(`Index ${index} is out of range for questions or questions1`);
+        }
+      });
+    });
+  })
+  .catch(error => {
+    console.error('Error loading checked indices:', error);
+  });
+
+  function updateH2State(op, h2, isChecked) {
+    if (isChecked) {
+      h2.innerHTML = `<del>${h2.innerHTML}</del>`;
+      op.style.opacity = 0.3;
+    } else {
+      h2.innerHTML = h2.innerHTML.replace('<del>', '').replace('</del>', '');
+      op.style.opacity = 1;
+    }
+  }
+});
+
+//2
+
+document.addEventListener("DOMContentLoaded", function() {
+  Promise.all([
+    fetch('/get-checked?filename=checkedIndices2.json'),
+
+  ])
+  .then(responses => Promise.all(responses.map(response => response.json())))
+  .then(dataArray => {
+    const questions = document.querySelectorAll("#question2-1 h2");
+    const questions1 = document.querySelectorAll("#question21");
+
+    dataArray.forEach((data, dataIndex) => {
+      data.checkedIndices.forEach(index => {
+        if (index < questions.length && index < questions1.length) {  // Ensure index is within range
+          const checkboxId = `checkbox${2}-${index}`;
+          const checkbox = document.getElementById(checkboxId);
+          const h2 = questions[index];
+          const op = questions1[index];
+          
+          if (checkbox) {
+            checkbox.checked = true;
+            updateH2State(op, h2, checkbox.checked); // Update the state of <h2>
+            checkbox.addEventListener('change', function() {
+              updateH2State(op, h2, this.checked);
+            });
+          } else {
+            console.warn(`Checkbox with ID ${checkboxId} not found`);
+          }
+        } else {
+          console.warn(`Index ${index} is out of range for questions or questions1`);
+        }
+      });
+    });
+  })
+  .catch(error => {
+    console.error('Error loading checked indices:', error);
+  });
+
+  function updateH2State(op, h2, isChecked) {
+    if (isChecked) {
+      h2.innerHTML = `<del>${h2.innerHTML}</del>`;
+      op.style.opacity = 0.2;
+    } else {
+      h2.innerHTML = h2.innerHTML.replace('<del>', '').replace('</del>', '');
+      op.style.opacity = 1;
+    }
+  }
+});
+
+//3
+
+document.addEventListener("DOMContentLoaded", function() {
+  Promise.all([
+    fetch('/get-checked?filename=checkedIndices3.json'),
+
+  ])
+  .then(responses => Promise.all(responses.map(response => response.json())))
+  .then(dataArray => {
+    const questions = document.querySelectorAll("#question3-1 h2");
+    const questions1 = document.querySelectorAll("#question31");
+
+    dataArray.forEach((data, dataIndex) => {
+      data.checkedIndices.forEach(index => {
+        if (index < questions.length && index < questions1.length) {  // Ensure index is within range
+          const checkboxId = `checkbox${3}-${index}`;
+          const checkbox = document.getElementById(checkboxId);
+          const h2 = questions[index];
+          const op = questions1[index];
+          
+          if (checkbox) {
+            checkbox.checked = true;
+            updateH2State(op, h2, checkbox.checked); // Update the state of <h2>
+            checkbox.addEventListener('change', function() {
+              updateH2State(op, h2, this.checked);
+            });
+          } else {
+            console.warn(`Checkbox with ID ${checkboxId} not found`);
+          }
+        } else {
+          console.warn(`Index ${index} is out of range for questions or questions1`);
+        }
+      });
+    });
+  })
+  .catch(error => {
+    console.error('Error loading checked indices:', error);
+  });
+
+  function updateH2State(op, h2, isChecked) {
+    if (isChecked) {
+      h2.innerHTML = `<del>${h2.innerHTML}</del>`;
+      op.style.opacity = 0.2;
+    } else {
+      h2.innerHTML = h2.innerHTML.replace('<del>', '').replace('</del>', '');
+      op.style.opacity = 1;
+    }
+  }
+});
+//Add question:
+var block = document.querySelectorAll(".catagory");
+var block2 = document.querySelectorAll(".block2");
+var catagories =document.querySelector("#cat");
+var task =document.querySelector("#task");
+var form =document.querySelector('#form')
+
+block.forEach((val1,index1)=>{
+  var isColorChanged = false;
+    val1.addEventListener("click",()=>{
+       catagories.value=index1;
+       console.log(index1)
+       if (!isColorChanged) {
+        val1.style.backgroundColor = "rgb(189, 162, 3)";
+        val1.style.transition= "all ease 0.5s";
+        // Reset color for other div1 elements
+        block.forEach(function (other) {
+          if (other !== val1) {
+            other.style.backgroundColor = "#282828";
+          }
+        });
+      } else {
+        val1.style.backgroundColor = "#282828";
+      }
+      isColorChanged = !isColorChanged;
+      
+     
+    })
+})
+block2.forEach((val2,index2)=>{
+  val2.addEventListener("click",()=>{
+    task.value=index2;
+    console.log(index2)
+  })
+})
+
+
+
+
+async function motivation()
+{
+  fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data[1].text);
+    console.log(data[1].author);
+  });
+}
+ motivation();
+
+ var edit =document.querySelector("#button");
+ var meter=document.querySelector("#meter-bold")
+ var bar =document.querySelector("#bar")
+ var fun = document.querySelectorAll("#function")
+ bar.style.transition="opacity ease-in 0.2s";
+ meter.style.transition="opacity ease-in 0.2s";
+ edit.style.transition="opacity ease-in 0.2s";
+
+  var count=0;
+ edit.addEventListener("click",()=>{
+     if(count==0)
+     {
+      meter.style.opacity=0.1;
+      edit.style.opacity=0.2;
+      bar.style.opacity=0.1;
+      fun.forEach(function(val){
+      
+        val.style.transition = "all ease 0.2s";
+        val.style.visibility = "hidden";
+      })
+      count++;
+     }else{
+      bar.style.opacity=1;
+      meter.style.opacity=1;
+      edit.style.opacity=1;
+      fun.forEach(function(val){
+        val.style.visibility = "visible";
+      })
+      count--;
+      
+     }
+ })
+
+
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: "rejouice headline";
+        color: white;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      #page1 {
+        width: 100%;
+        background-color: #1a1a1a;
+        min-height: 100vh;
+        padding-top: 10px;
+        padding-left: 60px;
+      }
+      #listwarp {
+        display: flex;
+        align-items: start;
+        justify-content: space-evenly;
+      }
+
+      #list {
+        width: 900px;
+        min-height: 600px;
+        background-color: #282828;
+        border-radius: 50px;
+        padding: 20px 30px;
+      }
+      #list h1 {
+        font-size: 4vw;
+        margin-bottom: 40px;
+      }
+      #meter {
+        width: 500px;
+        height: 300px;
+        background-color: #282828;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      #meter-bold {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      #question1 {
+        border-bottom: 1px solid white;
+        width: 98%;
+        height: 70px;
+        background-color: #282828;
+        border-radius: 3px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: capitalize;
+      }
+      #function {
+        width: 14%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        /* background-color: red; */
+      }
+      #function input {
+        width: 20px;
+        height: 20px;
+      }
+      #solve {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(189, 162, 3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        border-radius: 30px;
+      }
+      #solve h3 {
+        text-decoration: none;
+      }
+      #porgress {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: conic-gradient(rgb(189, 162, 3) 90.6deg, #d1d1d1 0deg);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #porgress::before {
+        content: " ";
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #282828;
+      }
+      #meter h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+      #meter p {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+
+      #bar {
+        width: 99%;
+        height: 60px;
+        background-color: #282828;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 0.7vw;
+        border-radius: 30px;
+        text-transform: capitalize;
+      }
+      #div1 {
+        height: 70%;
+
+        border-radius: 30px;
+        padding: 12px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-colorKO ease 0.2s;
+        cursor: pointer;
+      }
+      #div1:hover {
+        background-color: rgb(189, 162, 3);
+      }
+      .h2 {
+        margin-top: 10px;
+        height: 40%;
+        width: 60%;
+        font-size: 40px;
+        border-bottom: 5px solid white;
+      }
+      #question1 h2 i {
+        font-size: 10px;
+        margin-right: 10px;
+      }
+      #question1 h2 {
+        display: flex;
+        align-items: center;
+      }
+      hr {
+        margin-top: 40px;
+        opacity: 0;
+      }
+    </style>
+    <div id="main">
+      <div id="page1">
+        <div id="bar">
+          <div id="div1">
+            <a href="/"><h1>Arrays</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/sreaching"><h1>searching</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/sorting"><h1>sorting</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/string"><h1>string</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/recursion"><h1>recursion</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/bitwise"><h1>bitwise</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/linkedlist"><h1>linked list</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/stack"><h1>stack/queue</h1></a>
+          </div>
+          <div id="div1">
+            <a href="/tree"><h1>trees</h1></a>
+          </div>
+        </div>
+
+        <div id="listwarp">
+          <div id="list">
+            <h1>Sorting <i class="ri-corner-right-down-line"></i></h1>
+            <h2 class="h2">
+              <i class="ri-sparkling-2-line"></i> EASY<i
+                class="ri-arrow-right-fill"
+              ></i>
+            </h2>
+            <% easy.forEach(function(val, index) { %>
+            <div id="question">
+              <div id="question1">
+                <% const str2 = val.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+                %>
+                <h2>
+                  <i class="ri-circle-fill"></i> <%= str2.split(".txt")[0] %>
+                </h2>
+                <div id="function">
+                  <% var str3 = str2.split(" ").join("-").toLowerCase(); %> <%
+                  str3 = str3.split(".txt")[0]; %>
+                  <div id="solve">
+                    <a href="https://leetcode.com/problems/<%= str3 %>">
+                      <h3>Solve</h3>
+                    </a>
+                  </div>
+                  <form action="">
+                    <input type="checkbox" name="check" value="yes" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+            <hr />
+            <h2 class="h2">
+              <i class="ri-sparkling-2-line"></i> Medium<i
+                class="ri-arrow-right-fill"
+              ></i>
+            </h2>
+            <% medium.forEach(function(val, index) { %>
+            <div id="question">
+              <div id="question1">
+                <% const str2 = val.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+                %>
+                <h2>
+                  <i class="ri-circle-fill"></i> <%= str2.split(".txt")[0] %>
+                </h2>
+                <div id="function">
+                  <% var str3 = str2.split(" ").join("-").toLowerCase(); %> <%
+                  str3 = str3.split(".txt")[0]; %>
+                  <div id="solve">
+                    <a href="https://leetcode.com/problems/<%= str3 %>">
+                      <h3>Solve</h3>
+                    </a>
+                  </div>
+                  <form action="">
+                    <input type="checkbox" name="check" value="yes" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+
+            <hr />
+            <h2 class="h2">
+              <i class="ri-sparkling-2-line"></i> Hard
+              <i class="ri-arrow-right-fill"></i>
+            </h2>
+            <% hard.forEach(function(val, index) { %>
+            <div id="question">
+              <div id="question1">
+                <% const str2 = val.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+                %>
+                <h2>
+                  <i class="ri-circle-fill"></i> <%= str2.split(".txt")[0] %>
+                </h2>
+                <div id="function">
+                  <% var str3 = str2.split(" ").join("-").toLowerCase(); %> <%
+                  str3 = str3.split(".txt")[0]; %>
+                  <div id="solve">
+                    <a href="https://leetcode.com/problems/<%= str3 %>">
+                      <h3>Solve</h3>
+                    </a>
+                  </div>
+                  <form action="">
+                    <input type="checkbox" name="check" value="yes" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+
+          <div id="meter-bold">
+            <div id="meter">
+              <% var meter= easy.length + medium.length + hard.length %>
+              <h1>45/<%= meter %></h1>
+              <p>Bitwise</p>
+              <div id="porgress"></div>
+            </div>
+            <div id="meter"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"></script>
+    <script>
+      var checkBoxes = document.querySelectorAll(
+        "#function input[type='checkbox']"
+      );
+      var questions = document.querySelectorAll("#question1 h2");
+      var questions1 = document.querySelectorAll("#question1");
+
+      checkBoxes.forEach(function (checkbox, index) {
+        checkbox.addEventListener("click", function () {
+          var h2 = questions[index];
+          var op = questions1[index];
+
+          if (h2.innerHTML.includes("<del>")) {
+            h2.innerHTML = h2.innerHTML
+              .replace("<del>", "")
+              .replace("</del>", "");
+            op.style.opacity = "1";
+          } else {
+            h2.innerHTML = `<del>${h2.innerHTML}</del>`;
+            op.style.opacity = "0.3";
+          }
+        });
+      });
+
+      var div1 = document.querySelectorAll("#div1");
+
+      div1.forEach(function (val) {
+        var isColorChanged = false;
+
+        val.addEventListener("click", function () {
+          if (!isColorChanged) {
+            val.style.backgroundColor = "rgb(189, 162, 3)";
+            // Reset color for other div1 elements
+            div1.forEach(function (other) {
+              if (other !== val) {
+                other.style.backgroundColor = "#282828";
+              }
+            });
+          } else {
+            val.style.backgroundColor = "#282828";
+          }
+          isColorChanged = !isColorChanged;
+        });
+      });
+    </script>
+  </body>
+</html>
