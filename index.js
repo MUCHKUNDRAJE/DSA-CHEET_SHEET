@@ -339,7 +339,7 @@ app.post("/add", (req, res) => {
       
   }else 
     {
-      alert("dhsjsfk")
+      console.error("Invalid category or difficulty");
     }
 
   res.redirect("/");

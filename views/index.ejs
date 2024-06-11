@@ -31,6 +31,7 @@
         min-height: 100vh;
         padding-top: 10px;
         padding-left: 60px;
+      
       }
       #listwarp {
         display: flex;
@@ -295,7 +296,7 @@
     <div id="main">
       <div id="page1">
         <!-- <div id="circle" style="height: 50px;width:50px;border-radius:50px;background-color:#FF3750;"></div> -->
-        <div id="bar">
+        <div id="bar" >
       
           <div id="div1">
             <a href="/"><h1>Arrays</h1></a>
@@ -788,7 +789,7 @@ async function motivation()
       fun.forEach(function(val){
       
         val.style.transition = "all ease 0.2s";
-        val.style.visibility = "hidden";
+         val.style.transform= `scale(0)`;
       })
       count++;
      }else{
@@ -796,7 +797,7 @@ async function motivation()
       meter.style.opacity=1;
       edit.style.opacity=1;
       fun.forEach(function(val){
-        val.style.visibility = "visible";
+        val.style.transform= `scale(1)`;
       })
       count--;
       
